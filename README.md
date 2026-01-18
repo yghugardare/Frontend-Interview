@@ -14,8 +14,8 @@ Welcome to the CA Monk Blog Application assignment! This project tests your abil
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd camonk-interview
+   git clone https://github.com/mrDeepakk/Frontend-Interview.git
+   cd Frontend-Interview
    ```
 
 2. **Install dependencies**
@@ -23,8 +23,21 @@ Welcome to the CA Monk Blog Application assignment! This project tests your abil
    npm install
    ```
 
-3. **Install required libraries for the assignment** , ie, TanStack Query, Tailwind CSS, and  shadcn/ui
-4. **Start the JSON Server (Backend API)**
+  3. ## ⭐ Development Notes
+
+- The project uses JSON Server for local API mocking.
+- Running `npm run dev` starts both:
+ ```bash
+  npm run dev
+  ```
+  - Vite development server (http://localhost:5173)
+  - JSON Server (http://localhost:3001)
+- API base URL is centralized to allow seamless switch to a real backend.
+
+
+4. **Start the JSON Server explicitly (only if `npm run dev` does not work)**
+
+If the backend server does not start automatically with `npm run dev`, you can start it manually using:
    ```bash
    npm run server
    ```
