@@ -6,7 +6,11 @@
       "description": "Learn how to set up a new React project with TypeScript and understand the basics of type-safe component development.",
       "content": "React and TypeScript together provide a powerful combination for building robust web applications. TypeScript adds static type checking to JavaScript, which helps catch errors early in the development process.\n\nIn this guide, we'll explore how to set up a new React project with TypeScript, understand the basics of typing components, props, and state, and learn best practices for type-safe development.\n\nFirst, let's create a new project using Vite, which provides excellent TypeScript support out of the box. The development experience is fast and the build output is optimized for production.",
       "category": "Technology",
-      "tags": ["React", "TypeScript", "Frontend"],
+      "tags": [
+        "React",
+        "TypeScript",
+        "Frontend"
+      ],
       "coverImage": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800",
       "createdAt": "2024-01-15T10:30:00Z"
     },
@@ -16,7 +20,11 @@
       "description": "Discover how TanStack Query simplifies data fetching, caching, and synchronization in React applications.",
       "content": "TanStack Query (formerly React Query) has revolutionized how we handle server state in React applications. Unlike client state, server state is inherently asynchronous and owned by another source.\n\nTanStack Query provides powerful features like automatic caching, background refetching, stale-while-revalidate strategy, and optimistic updates. These features help create responsive and reliable user experiences.\n\nIn this article, we'll dive deep into query keys, mutations, cache invalidation, and advanced patterns that will level up your data fetching game.",
       "category": "Development",
-      "tags": ["TanStack Query", "React", "Data Fetching"],
+      "tags": [
+        "TanStack Query",
+        "React",
+        "Data Fetching"
+      ],
       "coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800",
       "createdAt": "2024-01-20T14:45:00Z"
     },
@@ -26,7 +34,11 @@
       "description": "A comprehensive guide to using Tailwind CSS for rapid UI development with utility-first approach.",
       "content": "Tailwind CSS has changed the way developers approach styling. Instead of writing custom CSS, you compose designs using utility classes directly in your markup.\n\nThis utility-first approach offers several advantages: faster development, consistent designs, smaller production bundles, and easier maintenance. Once you understand the class naming conventions, you can build complex layouts without leaving your HTML.\n\nWe'll explore responsive design, dark mode implementation, custom configurations, and how to combine Tailwind with component libraries like shadcn/ui.",
       "category": "Design",
-      "tags": ["Tailwind CSS", "UI", "Styling"],
+      "tags": [
+        "Tailwind CSS",
+        "UI",
+        "Styling"
+      ],
       "coverImage": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800",
       "createdAt": "2024-01-25T09:15:00Z"
     },
@@ -36,7 +48,11 @@
       "description": "Explore principles and patterns for writing maintainable, scalable, and testable code in modern applications.",
       "content": "Writing clean code is not just about making code work—it's about making code that other developers (including your future self) can understand, maintain, and extend.\n\nClean architecture separates concerns, making each part of your application focused on a single responsibility. This separation makes testing easier, reduces coupling, and allows for independent development of features.\n\nWe'll discuss SOLID principles, component composition, proper state management, and folder structures that scale with your application.",
       "category": "Technology",
-      "tags": ["Architecture", "Clean Code", "Best Practices"],
+      "tags": [
+        "Architecture",
+        "Clean Code",
+        "Best Practices"
+      ],
       "coverImage": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800",
       "createdAt": "2024-02-01T11:00:00Z"
     },
@@ -46,9 +62,27 @@
       "description": "Stay up to date with the latest JavaScript features that make your code more expressive and efficient.",
       "content": "JavaScript continues to evolve with new features that make development more enjoyable and code more expressive. From ES6 onwards, we've seen significant improvements in syntax and capabilities.\n\nFeatures like optional chaining, nullish coalescing, array methods, destructuring, and async/await have transformed how we write JavaScript. Understanding these features is essential for modern web development.\n\nIn this comprehensive guide, we'll explore practical examples and use cases for each feature, helping you write cleaner and more efficient code.",
       "category": "Development",
-      "tags": ["JavaScript", "ES6+", "Programming"],
+      "tags": [
+        "JavaScript",
+        "ES6+",
+        "Programming"
+      ],
       "coverImage": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800",
       "createdAt": "2024-02-05T16:30:00Z"
+    },
+    {
+      "id": "mkmn5debbagj8qv56q",
+      "title": "Understanding React Query Mutations",
+      "description": "A practical guide to using mutations in TanStack Query for real-world apps.",
+      "content": "TanStack Query mutations are used to create, update, or delete data on the server.\nUnlike queries, mutations represent actions that change state and therefore require\nexplicit control over side effects and cache updates.\n\nOne of the most powerful features of mutations is automatic cache invalidation.\nAfter a successful mutation, related queries can be invalidated and refetched,\nensuring the UI stays consistent with the backend without manual state handling.\n\nMutations also provide built-in loading, error, and success states.\nThis makes it easy to show progress indicators, disable buttons during submission,\nand handle failures gracefully without complex local state logic.\n\nIn real-world applications, mutations are commonly used for actions such as\ncreating blog posts, submitting forms, updating user profiles, and deleting records.\nWhen combined with optimistic updates, they can deliver a fast and responsive user experience.\n\nUnderstanding when and how to use mutations is essential for building reliable,\nscalable React applications that communicate effectively with APIs.",
+      "category": "Development",
+      "tags": [
+        "React",
+        "TanStack Query",
+        "Frontend"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+      "createdAt": "2026-01-20T13:39:54.515Z"
     }
   ]
 }
