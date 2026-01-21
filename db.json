@@ -117,6 +117,143 @@
       "date": "2025-12-10T16:30:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
       "content": "Ethics form the backbone of trust in financial systems. With increased automation and complex instruments, ethical judgment plays a crucial role in decision-making. Short-term gains achieved through unethical practices often lead to long-term damage.\n\nProfessionals must prioritize transparency, integrity, and accountability. Strong ethical frameworks protect not only clients but also the credibility of the profession.\n\nIn an era of rapid change, ethics remain a constant guiding principle."
+    },
+    {
+      "id": "a0cb",
+      "title": "kap",
+      "description": "hello",
+      "content": "kapish",
+      "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmfknV4BHrWiFqoqTnVTCDxfUXyJaPHGybgg&s",
+      "categories": []
+    },
+    {
+      "id": "c150",
+      "title": "kap",
+      "description": "hello",
+      "content": "kapish",
+      "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmfknV4BHrWiFqoqTnVTCDxfUXyJaPHGybgg&s",
+      "categories": []
+    },
+    {
+      "id": "25f8",
+      "title": "kap",
+      "description": "hello",
+      "content": "kapish",
+      "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmfknV4BHrWiFqoqTnVTCDxfUXyJaPHGybgg&s",
+      "categories": [
+        "kapis"
+      ]
+    },
+    {
+      "id": "ebcc",
+      "title": "dres",
+      "description": "dress",
+      "content": "context",
+      "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmfknV4BHrWiFqoqTnVTCDxfUXyJaPHGybgg&s",
+      "categories": [
+        "derees"
+      ]
+    },
+    {
+      "id": "4add",
+      "title": "test",
+      "description": "test",
+      "content": "test",
+      "coverImage": "test",
+      "categories": [
+        "test",
+        "test"
+      ],
+      "date": ""
+    },
+    {
+      "id": "6d34",
+      "title": "test",
+      "description": "test",
+      "content": "test",
+      "coverImage": "test",
+      "categories": [
+        "test"
+      ],
+      "date": ""
+    },
+    {
+      "id": "dc99",
+      "title": "test",
+      "description": "test",
+      "content": "test",
+      "coverImage": "test",
+      "categories": [
+        "test"
+      ],
+      "date": "1769017375613"
+    },
+    {
+      "id": "ceee",
+      "title": "test",
+      "description": "test",
+      "content": "test",
+      "coverImage": "test",
+      "categories": [
+        "test"
+      ],
+      "date": "Wed Jan 21 2026 23:14:25 GMT+0530 (India Standard Time)"
+    },
+    {
+      "id": "9437",
+      "title": "test1",
+      "description": "test1",
+      "content": "test1",
+      "coverImage": "test1",
+      "categories": [
+        "test1"
+      ],
+      "date": "2026-01-21T17:50:33.552Z"
+    },
+    {
+      "id": "3f6f",
+      "title": "test1",
+      "description": "test1",
+      "content": "test1",
+      "coverImage": "test1",
+      "categories": [
+        "test1"
+      ],
+      "date": "2026-01-21T17:51:23.370Z"
+    },
+    {
+      "id": "5091",
+      "title": "description",
+      "description": "description",
+      "content": "description",
+      "coverImage": "description",
+      "category": [],
+      "date": "2026-01-21T17:53:45.569Z",
+      "categories": [
+        "description"
+      ]
+    },
+    {
+      "id": "9a8b",
+      "title": "category",
+      "description": "category",
+      "content": "category",
+      "coverImage": "category",
+      "category": [
+        "category"
+      ],
+      "date": "2026-01-21T17:59:05.888Z"
+    },
+    {
+      "id": "81af",
+      "title": "gym",
+      "description": "gym",
+      "content": "gym",
+      "coverImage": "https://img.freepik.com/free-photo/strong-man-training-gym_1303-23478.jpg?semt=ais_hybrid&w=740&q=80",
+      "category": [
+        "gym"
+      ],
+      "date": "2026-01-21T18:01:52.585Z"
     }
   ]
 }
