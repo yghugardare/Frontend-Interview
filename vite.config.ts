@@ -1,7 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig, mergeConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { tanstackViteConfig } from "@tanstack/vite-config";
+import tailwindcss from '@tailwindcss/vite'
+const baseConfig = defineConfig({
+  plugins: [react(),tailwindcss(),],
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+});
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default mergeConfig(
+  baseConfig,
+  tanstackViteConfig({
+    entry: "./src/main.tsx",
+    srcDir: "./src",
+  })
+);
