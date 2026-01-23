@@ -11,6 +11,7 @@
     "server": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-query": "^5.90.19",
     "class-variance-authority": "^0.7.1",
