@@ -117,6 +117,28 @@
       "date": "2025-12-10T16:30:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
       "content": "Ethics form the backbone of trust in financial systems. With increased automation and complex instruments, ethical judgment plays a crucial role in decision-making. Short-term gains achieved through unethical practices often lead to long-term damage.\n\nProfessionals must prioritize transparency, integrity, and accountability. Strong ethical frameworks protect not only clients but also the credibility of the profession.\n\nIn an era of rapid change, ethics remain a constant guiding principle."
+    },
+    {
+      "id": "d64f",
+      "title": "title",
+      "description": "rfrf",
+      "content": "wygfyyrhedvbr",
+      "coverImage": "google.com",
+      "category": [
+        "TECH"
+      ],
+      "date": "2026-01-23T12:44:22.013Z"
+    },
+    {
+      "id": "6cb1",
+      "title": "ReactJS Project Overview",
+      "description": "This project focuses on building a responsive web application using ReactJS. It includes features like routing, authentication, API integration, and state management. The goal is to create a fast and user-friendly interface.",
+      "content": "This project focuses on developing a modern and responsive web application using ReactJS. The main objective is to create a fast, user-friendly, and scalable interface that improves user experience and simplifies navigation. The application follows a component-based architecture, where the UI is divided into reusable components to ensure better code organization and maintainability.\n\nThe project includes essential features such as user authentication (login/register), routing using React Router, API integration using Axios/Fetch, and state management with React Hooks like useState and useEffect. These features help in handling dynamic data efficiently and providing real-time updates without reloading the page.\n\nAdditionally, the application implements form validation, protected routes, and error handling to enhance security and reliability. Styling is done using CSS/Tailwind/Bootstrap to ensure responsiveness across different devices such as mobile, tablet, and desktop.\n\nOverall, this project demonstrates practical knowledge of frontend development, reusable components, and modern JavaScript practices, making it suitable for real-world web applications.",
+      "coverImage": "https://www.jotform.com/blog/wp-content/uploads/2017/01/react-js.png",
+      "category": [
+        "TECH"
+      ],
+      "date": "2026-01-23T13:01:02.892Z"
     }
   ]
 }
