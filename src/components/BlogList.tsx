@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import BlogItem from "./BlogItem";
 import { useBlogs } from "@/hooks/blogs";
+import BlogItemSkeleton from "./BlogItemSkeleton";
 
 export default function BlogItemList() {
   const { data, isPending, isError } = useBlogs();
@@ -14,7 +15,13 @@ export default function BlogItemList() {
   }, [data, isPending]);
 
   if (isPending) {
-    return <div>Loading skeletons...</div>;
+    return (
+      <div className="flex flex-col space-y-4">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <BlogItemSkeleton key={i} />
+        ))}
+      </div>
+    );
   }
 
   if (isError) {
