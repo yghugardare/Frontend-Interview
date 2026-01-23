@@ -1,30 +1,41 @@
-# TODO - Two-Panel Blog Layout Implementation
+# TODO - Blog Application Updates
 
 ## Plan Status: Completed ✓
 
 ### Steps Completed:
-- [x] 1. Create TODO.md file
-- [x] 2. Modify App.tsx - Implement two-panel layout with state management
-- [x] 3. Update BlogListPanel.tsx - Ensure proper display of blog cards
-- [x] 4. Update BlogDetailPanel.tsx - Ensure proper display of full content
-- [x] 5. Verify build and test - Build successful ✓
 
-### Implementation Details:
-- Left Panel: BlogListPanel showing category, title, description
-- Right Panel: BlogDetailPanel showing cover image and full content
+#### 1. ✅ Updated blog-list.tsx
+- [x] 1.1 Added `updateBlog(id: string, data: BlogFormData)` function
+- [x] 1.2 Added `deleteBlog(id: string)` function  
+- [x] 1.3 Added `fetchBlogById(id: string)` function for single blog fetch
+- [x] 1.4 Added `BlogCardSkeleton` and `BlogDetailSkeleton` components for loading states
+- [x] 1.5 Exported skeleton components and fetch function for reuse
 
-### Two-Panel Layout Structure:
-- Left Panel (col-span-4): Blog list cards with categories, title, description
-- Right Panel (col-span-8): Full blog content with cover image, description, and body
+#### 2. ✅ Updated BlogDetailPanel.tsx
+- [x] 2.1 Added `isLoading` prop to support loading states
+- [x] 2.2 Added import for `BlogDetailSkeleton` component
+- [x] 2.3 Added conditional rendering to show skeleton while loading
 
-### Visual Enhancements Added:
-- **Gradient Headers**: Indigo-purple-pink gradient on header and detail panel
-- **Category Colors**: Color-coded badges for each category (FINANCE, TECH, HEALTH, etc.)
-- **Animated Empty State**: Bouncing dots animation when no blog selected
-- **Card Hover Effects**: Scale and shadow animations on blog cards
-- **Viewing Indicator**: Shows "Viewing details" arrow when blog is selected
-- **Rounded Corners**: Modern rounded corners on panels and cards
-- **Backdrop Blur**: Glass-morphism effects on buttons
-- **Background Gradients**: Subtle slate-purple-indigo gradient backgrounds
-- **Shadows**: Soft shadows for depth on panels
+#### 3. ✅ Testing
+- [x] 3.1 Build compiles successfully ✓
+
+---
+
+## Changes Summary:
+
+### blog-list.tsx Updates:
+1. ✅ Added `fetchBlogById(id: string)` - fetches single blog by ID
+2. ✅ Added `updateBlog(id, data)` - updates existing blog via PUT
+3. ✅ Added `deleteBlog(id)` - deletes blog via DELETE  
+4. ✅ Added `BlogCardSkeleton` - loading skeleton for blog cards
+5. ✅ Added `BlogDetailSkeleton` - loading skeleton for detail panel
+6. ✅ Exported all new components and functions
+
+### BlogDetailPanel.tsx Updates:
+1. ✅ Added `isLoading` prop (default: false)
+2. ✅ Shows `BlogDetailSkeleton` when loading
+3. ✅ Better UX with visual feedback during data loading
+
+### Build Status:
+✅ Build successful - no TypeScript errors
 

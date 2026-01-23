@@ -5,6 +5,7 @@ import { BlogCardComponent } from "./blog-card"
 import { BlogForm } from "./blog-form"
 import { Button } from "../ui/button"
 import { ScrollArea } from "../ui/scroll-area"
+import { Card, CardContent, CardHeader } from "../ui/card"
 
 const API_URL = "http://localhost:3001"
 
@@ -12,6 +13,14 @@ async function fetchBlogs(): Promise<Blog[]> {
   const response = await fetch(`${API_URL}/blogs`)
   if (!response.ok) {
     throw new Error("Failed to fetch blogs")
+  }
+  return response.json()
+}
+
+async function fetchBlogById(id: string): Promise<Blog> {
+  const response = await fetch(`${API_URL}/blogs/${id}`)
+  if (!response.ok) {
+    throw new Error("Failed to fetch blog")
   }
   return response.json()
 }
@@ -54,6 +63,65 @@ async function deleteBlog(id: string): Promise<void> {
   if (!response.ok) {
     throw new Error("Failed to delete blog")
   }
+}
+
+// Loading Skeleton Component for Blog Card
+function BlogCardSkeleton() {
+  return (
+    <Card className="h-full flex flex-col animate-pulse">
+      <CardHeader>
+        <div className="flex flex-wrap gap-2 mb-2">
+          <div className="h-5 w-16 bg-gray-200 rounded-full"></div>
+          <div className="h-5 w-20 bg-gray-200 rounded-full"></div>
+        </div>
+        <div className="h-6 w-3/4 bg-gray-200 rounded mb-2"></div>
+        <div className="h-4 w-1/3 bg-gray-200 rounded"></div>
+      </CardHeader>
+      <CardContent className="flex-1">
+        <div className="space-y-2">
+          <div className="h-4 w-full bg-gray-200 rounded"></div>
+          <div className="h-4 w-full bg-gray-200 rounded"></div>
+          <div className="h-4 w-2/3 bg-gray-200 rounded"></div>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+// Loading Skeleton for Blog Detail Panel
+function BlogDetailSkeleton() {
+  return (
+    <div className="h-full flex flex-col animate-pulse">
+      <div className="p-6 border-b bg-gray-200">
+        <div className="flex flex-wrap gap-2 mb-3">
+          <div className="h-6 w-16 bg-gray-300 rounded-full"></div>
+          <div className="h-6 w-20 bg-gray-300 rounded-full"></div>
+        </div>
+        <div className="h-8 w-3/4 bg-gray-300 rounded mb-2"></div>
+        <div className="h-4 w-1/3 bg-gray-300 rounded"></div>
+        <div className="flex gap-3 mt-5">
+          <div className="h-9 w-16 bg-gray-300 rounded"></div>
+          <div className="h-9 w-20 bg-gray-300 rounded"></div>
+        </div>
+      </div>
+      <ScrollArea className="flex-1">
+        <div className="p-6">
+          <div className="h-64 w-full bg-gray-200 rounded-xl mb-6"></div>
+          <div className="space-y-4 mb-8">
+            <div className="h-6 w-3/4 bg-gray-200 rounded"></div>
+            <div className="h-6 w-1/2 bg-gray-200 rounded"></div>
+          </div>
+          <div className="space-y-4">
+            <div className="h-4 w-full bg-gray-200 rounded"></div>
+            <div className="h-4 w-full bg-gray-200 rounded"></div>
+            <div className="h-4 w-5/6 bg-gray-200 rounded"></div>
+            <div className="h-4 w-full bg-gray-200 rounded"></div>
+            <div className="h-4 w-3/4 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </ScrollArea>
+    </div>
+  )
 }
 
 export function BlogList() {
@@ -176,4 +244,6 @@ export function BlogList() {
     </div>
   )
 }
+
+export { BlogCardSkeleton, BlogDetailSkeleton, fetchBlogById }
 

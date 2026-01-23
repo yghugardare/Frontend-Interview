@@ -2,6 +2,7 @@ import type { Blog } from "../../types/blog"
 import { ScrollArea } from "../ui/scroll-area"
 import { Button } from "../ui/button"
 import { CardContent } from "../ui/card"
+import { BlogDetailSkeleton } from "./blog-list"
 
 // Color mapping for categories
 const categoryColors: Record<string, { bg: string; text: string }> = {
@@ -21,13 +22,19 @@ interface BlogDetailPanelProps {
   blog: Blog | null
   onEdit: (blog: Blog) => void
   onDelete: (id: string) => void
+  isLoading?: boolean
 }
 
 export function BlogDetailPanel({
   blog,
   onEdit,
   onDelete,
+  isLoading = false,
 }: BlogDetailPanelProps) {
+  if (isLoading) {
+    return <BlogDetailSkeleton />
+  }
+
   if (!blog) {
     return (
       <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-slate-50 to-purple-50">
