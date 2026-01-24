@@ -117,6 +117,17 @@
       "date": "2025-12-10T16:30:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
       "content": "Ethics form the backbone of trust in financial systems. With increased automation and complex instruments, ethical judgment plays a crucial role in decision-making. Short-term gains achieved through unethical practices often lead to long-term damage.\n\nProfessionals must prioritize transparency, integrity, and accountability. Strong ethical frameworks protect not only clients but also the credibility of the profession.\n\nIn an era of rapid change, ethics remain a constant guiding principle."
+    },
+    {
+      "id": "6aba",
+      "title": "From Beginner to MERN Stack Developer: My Coding Journey",
+      "description": "This blog shares my journey from knowing nothing about web development to becoming a confident MERN stack developer. Starting with basic HTML, CSS, and JavaScript, I slowly stepped into the world of React, Node.js, Express, and MongoDB. Along the way, I faced challenges, debugging struggles, late-night coding sessions, and countless errors — but each obstacle helped me grow stronger and smarter.",
+      "content": "Every expert was once a beginner. A few months ago, I didn’t even know how websites actually worked. Terms like APIs, databases, servers, and frameworks sounded complicated and intimidating. But today, I can confidently build full-stack web applications using the MERN stack. This journey wasn’t easy, but it was definitely worth it. From writing my first line of HTML to deploying complete projects, every step helped me grow as a developer.",
+      "coverImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7F9E7M7Dhs8yLkin92_yS2nbxpOTBuCiiNw&s",
+      "category": [
+        "TECH"
+      ],
+      "date": "2026-01-24T13:59:30.104Z"
     }
   ]
 }
