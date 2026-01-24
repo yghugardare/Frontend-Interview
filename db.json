@@ -1,0 +1,40 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "title": "Future of Fintech",
+      "category": "FINANCE",
+      "description": "Exploring how AI and blockchain are reshaping financial services",
+      "date": "2026-01-11T09:12:45.120Z",
+      "coverImage": "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg",
+      "content": "Full blog content about Fintech..."
+    },
+    {
+      "id": "2",
+      "title": "React Server Components",
+      "category": "TECH",
+      "description": "Understanding the server-side revolution in React ecosystem",
+      "date": "2026-01-20T10:00:00.000Z",
+      "coverImage": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg",
+      "content": "Full blog content about React Server Components..."
+    },
+    {
+      "id": "3",
+      "title": "Sustainable Living",
+      "category": "LIFESTYLE",
+      "description": "Tips for a more eco-friendly daily routine",
+      "date": "2026-01-18T14:30:00.000Z",
+      "coverImage": "https://images.pexels.com/photos/30588636/pexels-photo-30588636.jpeg",
+      "content": "Full blog content about Sustainable Living..."
+    },
+    {
+      "id": "d4f8",
+      "title": "sample",
+      "category": "Tech",
+      "description": "hello world",
+      "coverImage": "https://bernardmarr.com/the-10-tech-trends-that-will-transform-our-world/",
+      "content": "the content of blog",
+      "date": "2026-01-24T20:05:23.528Z"
+    }
+  ]
+}
