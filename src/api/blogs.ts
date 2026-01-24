@@ -37,8 +37,10 @@ export async function getBlogById(id: string): Promise<Blog> {
 
     if (!res.ok) {
       const message = await getErrorMessage(res);
-
       if (res.status >= 400 && res.status < 500) {
+        if (res.status === 404) {
+          throw new Error("NOT_FOUND");
+        }
         throw new Error(`Client error: ${message}`);
       }
 
