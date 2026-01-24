@@ -1,8 +1,6 @@
-import { Outlet, useLocation, useParams } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import BlogItemList from "./components/BlogList";
 import { cn } from "./shadcn/lib/utils";
-import { Button } from "./shadcn/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import { ErrorBoundary } from "./ErrorBoundary";
 
 function App() {
