@@ -7,7 +7,7 @@ import { Button } from "@/shadcn/components/ui/button";
 import { Plus as PlusIcon } from "lucide-react";
 
 export default function BlogItemList() {
-  const { data, isPending, isError } = useBlogs();
+  const { data, isPending, isError, error } = useBlogs();
 
   useEffect(() => {
     if (isPending) {
@@ -28,7 +28,8 @@ export default function BlogItemList() {
   }
 
   if (isError) {
-    throw new Error("failed to load blogs");
+    console.log(error);
+    throw error;
   }
 
   if (data.length === 0) {
