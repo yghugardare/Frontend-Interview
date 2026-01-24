@@ -6,14 +6,14 @@ import BlogDetailSkeleton from "./BlogDetailSkeleton";
 
 export default function BlogDetailContainer() {
   const { id } = useParams<{ id: string }>();
-  const { data: blog, isPending, isError } = useBlog(id || "");
+  const { data: blog, isPending, isError, error } = useBlog(id || "");
 
   if (isPending) {
     return <BlogDetailSkeleton />;
   }
 
   if (isError || !blog) {
-    if (isError) {
+    if (isError && error.message !== "NOT_FOUND") {
       throw new Error("Failed to load blog details");
     }
     return (
