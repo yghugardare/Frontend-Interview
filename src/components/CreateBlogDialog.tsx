@@ -29,14 +29,12 @@ export const CreateBlogDialog = ({ isOpen, onClose }: CreateBlogDialogProps) => 
   if (!isOpen) return null;
 
   const onSubmit = (data: CreateBlogDto) => {
-    // Add default values for simplicity
     const newBlog = {
       ...data,
-      id: Math.random().toString(36).substr(2, 9), // Simple ID gen
-      date: new Date().toISOString(),
+      id: Math.random().toString(36).substr(2, 9), 
       category: typeof data.category === 'string' ? (data.category as string).split(',').map((s: string) => s.trim()) : ["General"]
     };
-    mutation.mutate(newBlog as any); // Casting for this simple example
+    mutation.mutate(newBlog as any);
   };
 
   return (

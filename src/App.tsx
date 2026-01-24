@@ -10,13 +10,13 @@ function App() {
   const [selectedBlogId, setSelectedBlogId] = useState<string | null>(null);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
 
-  // 1. Get All Blogs
+  
   const { data: blogs, isLoading, error } = useQuery({
     queryKey: ['blogs'],
     queryFn: fetchBlogs,
   });
 
-  // 2. Get Blog by ID (Enabled only when an ID is selected)
+  
   const { data: selectedBlog, isLoading: isDetailsLoading } = useQuery({
     queryKey: ['blog', selectedBlogId],
     queryFn: () => fetchBlogById(selectedBlogId!),
@@ -28,7 +28,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
       <header className="border-b">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <h1 className="text-xl font-bold">CA Monk Blog</h1>
@@ -41,7 +40,6 @@ function App() {
       <main className="container mx-auto px-4 py-6 h-[calc(100vh-65px)]">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full">
           
-          {/* Left Panel: Blog List */}
           <div className="md:col-span-4 lg:col-span-3 overflow-y-auto pr-2 space-y-4 h-full scrollbar-thin">
             {blogs?.map((blog) => (
               <BlogCard 
@@ -53,7 +51,6 @@ function App() {
             ))}
           </div>
 
-          {/* Right Panel: Blog Detail */}
           <div className="md:col-span-8 lg:col-span-9 h-full overflow-y-auto bg-card border rounded-lg p-8 shadow-sm">
             {selectedBlogId ? (
               isDetailsLoading ? (
