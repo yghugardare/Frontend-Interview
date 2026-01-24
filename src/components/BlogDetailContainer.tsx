@@ -2,13 +2,14 @@ import { useParams } from "react-router";
 import { useBlog } from "@/hooks/blogs";
 import BlogDetail from "./BlogDetail";
 import { AlertCircle } from "lucide-react";
+import BlogDetailSkeleton from "./BlogDetailSkeleton";
 
 export default function BlogDetailContainer() {
   const { id } = useParams<{ id: string }>();
   const { data: blog, isPending, isError } = useBlog(id || "");
 
   if (isPending) {
-    return <p>loading</p>;
+    return <BlogDetailSkeleton />;
   }
 
   if (isError || !blog) {
