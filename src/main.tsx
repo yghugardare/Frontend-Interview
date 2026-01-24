@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App.tsx";
 import BlogDetailContainer from "./components/BlogDetailContainer.tsx";
 import BlogForm from "./components/BlogForm.tsx";
+import NotFound from "./components/NotFound.tsx";
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path=":id" element={<BlogDetailContainer />} />
             <Route path="new" element={<BlogForm />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
