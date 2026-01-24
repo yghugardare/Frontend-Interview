@@ -28,7 +28,7 @@ export default function BlogItemList() {
   }
 
   if (isError) {
-    return <div>Failed to load blogs</div>;
+    throw new Error("failed to load blogs");
   }
 
   if (data.length === 0) {
