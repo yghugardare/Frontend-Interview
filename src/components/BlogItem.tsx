@@ -23,12 +23,8 @@ export default function BlogItem({
   date,
 }: BlogItemProps) {
   return (
-    <Link
-      key={id}
-      to={`/blogs/${id}`}
-      className="block rounded-lg border p-3 transition-colors hover:bg-muted/50"
-    >
-      <Card>
+    <Link key={id} to={`/blogs/${id}`}>
+      <Card className="transition-colors hover:bg-muted/50">
         <CardHeader className="space-y-2">
           <div className="flex items-center justify-between">
             <div className="flex gap-1 flex-wrap">
