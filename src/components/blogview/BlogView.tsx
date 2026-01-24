@@ -1,17 +1,17 @@
-import React, {useEffect} from 'react'
+import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { timeFormatter } from "../../utilities/utilities" 
+import { timeFormatter } from "../../utilities/utilities";
 import { Button } from "@/components/ui/button";
 
-interface BlogViewProps{
-    blogID:string | null;
+interface BlogViewProps {
+  blogID: string | null;
 }
-const BlogView = ({blogID}:BlogViewProps) => {
+const BlogView = ({ blogID }: BlogViewProps) => {
   const { data } = useQuery({
     queryKey: ["blogData", blogID],
     queryFn: () =>
       fetch(`http://localhost:3001/blogs/${blogID}`).then((res) => res.json()),
-    enabled:!!blogID
+    enabled: !!blogID,
   });
 
   // DATE FORMATE OPTION
@@ -21,14 +21,14 @@ const BlogView = ({blogID}:BlogViewProps) => {
     day: "numeric",
   };
   return (
-    <div className="blog-content col-span-8 rounded-lg col-span-12 md:col-span-8">
+    <div className="blog-content  rounded-lg col-span-12 md:col-span-8 md:overflow-y-scroll md:h-[150vh] custom-scrollbar md:pr-6">
       {/* BlOG COVER */}
       <div
         className="blog-cover bg-cover bg-center rounded-t-lg bg-no-repeat w-full h-96 "
         style={{ backgroundImage: `url(${data?.coverImage})` }}
       ></div>
       {/* BLOG CONTENT */}
-      <div className="blog-content-area p-8 text-left">
+      <div className="blog-content-area p-0 md:p-8 text-left">
         <div className="blog-header space-y-8">
           <div className="category flex items-center gap-x-2 font-semibold text-gray-600 text-lg">
             <p className="text-indigo-700">{data?.category.join(" & ")}</p> •{" "}
@@ -75,4 +75,4 @@ const BlogView = ({blogID}:BlogViewProps) => {
   );
 };
 
-export default BlogView
+export default BlogView;

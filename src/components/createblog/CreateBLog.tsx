@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { toast } from 'sonner';
+import { toast } from "sonner";
 import { Label } from "@/components/ui/label";
 import {
   Sheet,
@@ -18,11 +18,9 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
   SheetFooter,
   SheetClose,
 } from "@/components/ui/sheet";
-import { PlusCircle } from "lucide-react";
 
 type Blog = {
   id: string;
@@ -60,7 +58,7 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
   });
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -117,20 +115,16 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
         ...old,
       ]);
 
-      toast({
-        title: "Blog created successfully!",
+      toast("Blog created successfully!", {
         description: `"${newBlog.title}" has been published.`,
-        variant: "default",
       });
 
       resetForm();
       setOpen(false);
     },
     onError: (error: Error) => {
-      toast({
-        title: "Error creating blog",
+      toast("Error creating blog", {
         description: error.message,
-        variant: "destructive",
       });
     },
     onSettled: () => {
@@ -143,24 +137,21 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
     e.preventDefault();
 
     if (!formData.title.trim()) {
-      toast({
-        title: "Validation Error",
+      toast("Validation Error", {
         description: "Title is required",
-        variant: "destructive",
       });
       return;
     }
 
     if (!formData.category) {
-      toast({
-        title: "Validation Error",
+      toast("Validation Error", {
         description: "Please select a category",
-        variant: "destructive",
       });
       return;
     }
 
     createBlogMutation.mutate(formData);
+    window.location.reload();
   };
 
   return (
@@ -180,7 +171,7 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
             <Input
               id="title"
               name="title"
-              value={formData.title}
+              value={formData?.title}
               onChange={handleInputChange}
               placeholder="Enter a compelling title..."
               disabled={isSubmitting}
@@ -197,7 +188,7 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
             <Textarea
               id="description"
               name="description"
-              value={formData.description}
+              value={formData?.description}
               onChange={handleInputChange}
               placeholder="Brief overview of your blog post..."
               className="min-h-32"
@@ -215,7 +206,7 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
             <Textarea
               id="content"
               name="content"
-              value={formData.content}
+              value={formData?.content}
               onChange={handleInputChange}
               placeholder="Write your blog content here..."
               className="min-h-64"
@@ -233,7 +224,7 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
             <Input
               id="coverImage"
               name="coverImage"
-              value={formData.coverImage}
+              value={formData?.coverImage}
               onChange={handleInputChange}
               placeholder="https://images.pexels.com/photo-..."
               disabled={isSubmitting}
@@ -248,7 +239,7 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
           <div className="space-y-2">
             <Label htmlFor="category">Category *</Label>
             <Select
-              value={formData.category}
+              value={formData?.category}
               onValueChange={handleSelectChange}
               disabled={isSubmitting}
             >
@@ -275,14 +266,14 @@ export default function CreateBlog({ open, setOpen }: CreateBlogType) {
               <div>
                 <p className="text-sm text-gray-500">Title:</p>
                 <p className="font-medium truncate">
-                  {formData.title || "Your title will appear here"}
+                  {formData?.title || "Your title will appear here"}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-gray-500">Category:</p>
                 <p className="text-gray-700">
                   {formData.category
-                    ? CATEGORIES.find((c) => c.id === formData.category)?.label
+                    ? CATEGORIES.find((c) => c.id === formData?.category)?.label
                     : "No category selected"}
                 </p>
               </div>

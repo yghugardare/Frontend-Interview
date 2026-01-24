@@ -141,3 +141,17 @@ body {
   }
 }
 
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-indigo-700); /* bg-slate-300 */
+    border-radius: 40px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: var(--color-gray-200); /* bg-slate-300 */
+    border-radius: 40px;
+    width: 12px;
+  }
+}
