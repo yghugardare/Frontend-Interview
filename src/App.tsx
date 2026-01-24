@@ -3,6 +3,7 @@ import BlogItemList from "./components/BlogList";
 import { cn } from "./shadcn/lib/utils";
 import { Button } from "./shadcn/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 function App() {
   const location = useLocation();
@@ -17,7 +18,9 @@ function App() {
             isRoot ? "block" : "hidden",
           )}
         >
-          <BlogItemList />
+          <ErrorBoundary name="BlogList">
+            <BlogItemList />
+          </ErrorBoundary>
         </aside>
         <section
           className={cn(
@@ -25,7 +28,9 @@ function App() {
             isRoot ? "hidden" : "block",
           )}
         >
-          <Outlet />
+          <ErrorBoundary name="BlogView">
+            <Outlet />
+          </ErrorBoundary>
         </section>
       </main>
     </div>
