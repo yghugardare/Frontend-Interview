@@ -168,4 +168,4 @@ No. This assignment is only for the hiring process and will not be used commerci
 **Have more questions?**  
 If you have any additional doubts, feel free to reach out at: `developer@camonk.com`.
 
-Good luck! 🚀
+Good luck!
