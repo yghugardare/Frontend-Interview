@@ -7,6 +7,8 @@ export function useBlogs() {
   return useQuery({
     queryKey: ["blogs"],
     queryFn: getAllBlogs,
+    refetchOnWindowFocus: false,
+    retry: false,
   });
 }
 

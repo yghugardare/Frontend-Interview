@@ -1,18 +1,31 @@
-import BlogList from "./components/BlogList";
+import { Outlet, useLocation, useParams } from "react-router";
+import BlogItemList from "./components/BlogList";
+import { cn } from "./shadcn/lib/utils";
+import { Button } from "./shadcn/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 function App() {
+  const location = useLocation();
+  const isRoot = location.pathname === "/blogs" || location.pathname === "/";
+
   return (
     <div className="h-screen flex flex-col ">
       <main className="h-full flex">
-        <aside className="w-full lg:max-w-90 shrink-0 overflow-auto p-2">
-          <BlogList />
+        <aside
+          className={cn(
+            "w-full lg:max-w-90 shrink-0 overflow-auto p-2 lg:block",
+            isRoot ? "block" : "hidden",
+          )}
+        >
+          <BlogItemList />
         </aside>
-        <section className="hidden lg:block grow bg-blue-300 overflow-auto">
-          <p>right panel</p>
-          <p>Right panel content will trigger its own scroll</p>
-          <div className="h-[100px] w-[1000vh] bg-violet-300" />
-          <p>Demo tall content </p>
-          <div className="h-[100vh] bg-purple-200" />
+        <section
+          className={cn(
+            "lg:block grow overflow-auto",
+            isRoot ? "hidden" : "block",
+          )}
+        >
+          <Outlet />
         </section>
       </main>
     </div>
