@@ -38,7 +38,8 @@ export default function BlogForm() {
       });
       navigate(`/blogs/${newBlog.id}`);
     } catch (error) {
-      console.error("Failed to create blog", error);
+      console.log(error);
+      throw new Error("failed to create new blog");
     }
   };
 
