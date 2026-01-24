@@ -17,6 +17,8 @@ export function useBlog(id: string) {
     queryKey: ["blogs", id],
     queryFn: () => getBlogById(id),
     enabled: !!id,
+    refetchOnWindowFocus: false,
+    retry: false,
   });
 }
 
