@@ -3,120 +3,38 @@
     {
       "id": "1",
       "title": "Future of Fintech",
-      "category": [
-        "FINANCE",
-        "TECH"
-      ],
-      "description": "Exploring how AI and blockchain are reshaping financial services and what it means for the accounting profession",
+      "category": "FINANCE",
+      "description": "Exploring how AI and blockchain are reshaping financial services",
       "date": "2026-01-11T09:12:45.120Z",
       "coverImage": "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg",
-      "content": "Fintech is no longer a buzzword—it is a structural shift in how financial services operate. Technologies such as artificial intelligence, blockchain, and cloud computing are redefining payments, lending, auditing, and compliance. AI-driven analytics now automate tasks that once required teams of accountants, enabling faster insights and fewer errors. Blockchain, on the other hand, introduces transparency and immutability, reducing fraud and improving trust in financial records.\n\nFor accounting and finance professionals, this shift demands adaptation. Understanding data analytics, digital ledgers, and automated compliance tools is becoming as important as traditional accounting standards. Fintech platforms are also making financial services more accessible, allowing small businesses and individuals to manage finances with tools previously reserved for large corporations.\n\nHowever, this evolution also raises challenges. Data privacy, cybersecurity, and regulatory alignment remain critical concerns. Professionals must balance innovation with compliance while ensuring ethical use of technology. Those who proactively upskill and embrace digital transformation will find themselves better positioned in a rapidly changing financial ecosystem. Fintech is not replacing finance professionals—it is redefining their role."
+      "content": "Full blog content about Fintech..."
     },
     {
       "id": "2",
-      "title": "Ace Your CA Finals",
-      "category": [
-        "CAREER",
-        "EDUCATION"
-      ],
-      "description": "Strategies and study plans to help you clear your exams in the first attempt without burning out",
-      "date": "2026-01-13T06:42:36.580Z",
-      "coverImage": "https://images.pexels.com/photos/5212327/pexels-photo-5212327.jpeg",
-      "content": "Clearing CA finals on the first attempt requires more than hard work—it demands smart planning and mental discipline. The syllabus is vast, and without a structured approach, students often feel overwhelmed. A realistic timetable that balances study, revision, and rest is the foundation of effective preparation.\n\nConceptual clarity should always take priority over rote learning. Instead of memorizing provisions, focus on understanding their practical application. Regular mock tests help identify weak areas and improve time management under exam conditions. Equally important is revision; multiple short revisions are far more effective than a single exhaustive one.\n\nMental and physical health often get ignored during preparation. Poor sleep, lack of exercise, and constant stress can reduce productivity significantly. Short breaks, light workouts, and mindful breathing help maintain focus and prevent burnout. Remember, consistency beats intensity. Studying six focused hours daily for months is better than sporadic twelve-hour sessions.\n\nFinally, avoid comparison. Every student has a different pace. Trust your preparation, stay disciplined, and focus on progress rather than perfection."
+      "title": "React Server Components",
+      "category": "TECH",
+      "description": "Understanding the server-side revolution in React ecosystem",
+      "date": "2026-01-20T10:00:00.000Z",
+      "coverImage": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg",
+      "content": "Full blog content about React Server Components..."
     },
     {
       "id": "3",
-      "title": "Understanding Tax Reforms",
-      "category": [
-        "REGULATIONS",
-        "FINANCE"
-      ],
-      "description": "A comprehensive breakdown of the new tax laws introduced this fiscal year and their implications",
-      "date": "2026-01-05T10:20:15.000Z",
-      "coverImage": "https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg",
-      "content": "Recent tax reforms have introduced notable changes affecting individuals, startups, and large enterprises alike. Revised slabs, updated compliance requirements, and stricter reporting norms aim to increase transparency and widen the tax base. While these changes simplify certain procedures, they also demand greater awareness from taxpayers.\n\nFor professionals, understanding the intent behind reforms is essential. Incentives for digital transactions, reduced corporate tax for specific sectors, and tighter scrutiny on deductions signal a push toward accountability. Businesses must revisit their tax planning strategies to align with updated provisions and avoid penalties.\n\nIndividuals, too, must reassess their investment and savings decisions. Choosing between old and new tax regimes requires careful calculation rather than assumptions. Proper documentation and timely filing are now more critical than ever.\n\nOverall, tax reforms are designed to balance growth with compliance. Staying informed and proactive is the only way to leverage benefits while minimizing risks."
+      "title": "Sustainable Living",
+      "category": "LIFESTYLE",
+      "description": "Tips for a more eco-friendly daily routine",
+      "date": "2026-01-18T14:30:00.000Z",
+      "coverImage": "https://images.pexels.com/photos/30588636/pexels-photo-30588636.jpeg",
+      "content": "Full blog content about Sustainable Living..."
     },
     {
-      "id": "4",
-      "title": "Building a Career in Accounting",
-      "category": [
-        "CAREER"
-      ],
-      "description": "Key skills and mindset required to succeed in modern accounting roles",
-      "date": "2025-12-28T14:10:00.000Z",
-      "coverImage": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg",
-      "content": "Accounting careers have evolved far beyond bookkeeping and compliance. Today’s accountants are strategic advisors who combine financial expertise with analytical thinking. Strong fundamentals in accounting standards remain essential, but soft skills such as communication and problem-solving are equally important.\n\nTechnology plays a major role in modern accounting. Familiarity with accounting software, data analytics tools, and automation platforms can significantly enhance career prospects. Professionals who resist technology risk becoming obsolete.\n\nContinuous learning is non-negotiable. Regulations change, tools evolve, and business models shift. Certifications, workshops, and practical exposure help professionals stay relevant. Building a strong professional network also opens doors to better opportunities.\n\nUltimately, a successful accounting career is built on adaptability, ethics, and long-term thinking."
-    },
-    {
-      "id": "5",
-      "title": "AI in Auditing",
-      "category": [
-        "TECH",
-        "FINANCE"
-      ],
-      "description": "How artificial intelligence is improving audit accuracy and efficiency",
-      "date": "2026-01-02T08:30:00.000Z",
-      "coverImage": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
-      "content": "Artificial intelligence is transforming the auditing profession by automating repetitive tasks and enhancing accuracy. AI tools can analyze massive datasets in minutes, flag anomalies, and identify potential risks that may go unnoticed in traditional audits.\n\nThis shift allows auditors to focus more on judgment-based work rather than manual verification. Continuous auditing models are also becoming feasible, providing real-time insights instead of annual reviews.\n\nDespite its advantages, AI does not replace professional judgment. Auditors must understand how algorithms work and validate results independently. Ethical considerations and data security also remain critical.\n\nWhen used responsibly, AI acts as a powerful assistant, elevating audit quality and efficiency."
-    },
-    {
-      "id": "6",
-      "title": "Managing Work-Life Balance",
-      "category": [
-        "CAREER",
-        "LIFESTYLE"
-      ],
-      "description": "Practical tips for professionals handling high-pressure roles",
-      "date": "2026-01-09T18:45:00.000Z",
-      "coverImage": "https://images.pexels.com/photos/3768894/pexels-photo-3768894.jpeg",
-      "content": "High-pressure careers often blur the line between work and personal life. Long hours and constant deadlines can lead to burnout if not managed properly. Setting boundaries is the first step toward balance.\n\nPrioritization helps professionals focus on high-impact tasks instead of reacting to every request. Delegation and efficient planning reduce unnecessary stress. Equally important is disconnecting after work hours to recharge mentally.\n\nPhysical health directly impacts productivity. Regular exercise, adequate sleep, and mindful habits improve focus and resilience. A balanced life is not a luxury—it is a requirement for sustained performance."
-    },
-    {
-      "id": "7",
-      "title": "GST Compliance Simplified",
-      "category": [
-        "REGULATIONS"
-      ],
-      "description": "Understanding GST returns and compliance without confusion",
-      "date": "2025-12-20T11:00:00.000Z",
-      "coverImage": "https://images.pexels.com/photos/4386326/pexels-photo-4386326.jpeg",
-      "content": "GST compliance often appears complex due to frequent updates and multiple return types. However, a systematic approach can simplify the process significantly. Understanding filing timelines and documentation requirements is crucial.\n\nAutomation tools now assist in reconciling invoices and filing returns accurately. Businesses that adopt digital workflows face fewer errors and penalties.\n\nStaying updated with notifications and circulars helps avoid last-minute surprises. Proper compliance not only prevents legal issues but also improves cash flow management."
-    },
-    {
-      "id": "8",
-      "title": "Personal Finance for Young Professionals",
-      "category": [
-        "FINANCE",
-        "LIFESTYLE"
-      ],
-      "description": "Smart money habits to build long-term wealth",
-      "date": "2026-01-07T07:15:00.000Z",
-      "coverImage": "https://images.pexels.com/photos/3943724/pexels-photo-3943724.jpeg",
-      "content": "Early career decisions have a long-lasting impact on financial stability. Budgeting, emergency funds, and disciplined investing form the foundation of personal finance. Avoiding lifestyle inflation is key to saving consistently.\n\nUnderstanding basic investment options such as mutual funds and insurance helps young professionals make informed decisions. Starting early allows compounding to work in your favor.\n\nFinancial discipline is not about restriction but about conscious choices that align with long-term goals."
-    },
-    {
-      "id": "9",
-      "title": "Digital Transformation in Accounting Firms",
-      "category": [
-        "TECH",
-        "CAREER"
-      ],
-      "description": "How firms are adapting to cloud-based accounting",
-      "date": "2025-12-15T09:00:00.000Z",
-      "coverImage": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
-      "content": "Accounting firms are rapidly adopting cloud-based systems to improve efficiency and collaboration. Digital tools enable real-time access to data, better client communication, and reduced operational costs.\n\nTransitioning to digital platforms requires change management and upskilling teams. Firms that invest early gain a competitive advantage.\n\nDigital transformation is no longer optional—it is essential for long-term sustainability."
-    },
-    {
-      "id": "10",
-      "title": "Ethics in Modern Finance",
-      "category": [
-        "FINANCE",
-        "REGULATIONS"
-      ],
-      "description": "Why ethics matter more than ever in financial decision-making",
-      "date": "2025-12-10T16:30:00.000Z",
-      "coverImage": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
-      "content": "Ethics form the backbone of trust in financial systems. With increased automation and complex instruments, ethical judgment plays a crucial role in decision-making. Short-term gains achieved through unethical practices often lead to long-term damage.\n\nProfessionals must prioritize transparency, integrity, and accountability. Strong ethical frameworks protect not only clients but also the credibility of the profession.\n\nIn an era of rapid change, ethics remain a constant guiding principle."
+      "id": "d4f8",
+      "title": "sample",
+      "category": "Tech",
+      "description": "hello world",
+      "coverImage": "https://bernardmarr.com/the-10-tech-trends-that-will-transform-our-world/",
+      "content": "the content of blog",
+      "date": "2026-01-24T20:05:23.528Z"
     }
   ]
 }
