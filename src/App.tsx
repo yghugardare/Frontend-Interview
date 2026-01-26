@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { BlogList } from "./components/BlogList";
+import { BlogDetail } from "./components/BlogDetail";
+import { CreateBlogForm } from "./components/CreateBlogForm";
+import type { Blog } from "./types/blog";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedBlog, setSelectedBlog] = useState<Blog | null>(null);
+
+  const handleSelectBlog = (blog: Blog) => {
+    setSelectedBlog(blog);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8">
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold mb-2">CA Monk Blog</h1>
+          <p className="text-muted-foreground">
+            Stay updated with the latest trends in finance, accounting, and career growth
+          </p>
+        </header>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left Panel - Blog List */}
+          <div className="lg:col-span-1">
+            <CreateBlogForm />
+            <BlogList
+              onSelectBlog={handleSelectBlog}
+              selectedBlogId={selectedBlog?.id || null}
+            />
+          </div>
+
+          {/* Right Panel - Blog Detail */}
+          <div className="lg:col-span-2">
+            <BlogDetail blogId={selectedBlog?.id || null} />
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
