@@ -28,6 +28,7 @@ Welcome to the CA Monk Blog Application assignment! This project tests your abil
 3. **Install required libraries for the assignment** , ie, TanStack Query, Tailwind CSS, and  shadcn/ui
 4. **Start the JSON Server (Backend API)**
    ```bash
+   npm run build
    npm run server
    ```
    The API will run on `http://localhost:3001`
