@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Manrope', sans-serif;
+  --font-serif: 'Libre Baskerville', serif;
+
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%; /* Dark Navy/Black */
+  
+  --primary: 221 83% 53%; /* Strong Blue */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 210 40% 96.1%; /* Very light grey/blue */
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215 16% 47%;
+  
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221 83% 53%;
+  
+  --radius: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40 transition-colors;
+}
+
+/* Typography Prose Overrides */
+.prose {
+  @apply max-w-none text-foreground;
+}
+.prose h1, .prose h2, .prose h3 {
+  font-family: var(--font-serif);
+  @apply text-foreground font-bold mt-8 mb-4;
+}
+.prose p {
+  @apply leading-relaxed mb-6 text-lg text-slate-700;
+}
+.prose strong {
+  @apply font-bold text-foreground;
+}
