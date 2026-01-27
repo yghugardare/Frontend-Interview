@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet, useLocation } from "react-router";
+import BlogItemList from "./components/BlogList";
+import { cn } from "./shadcn/lib/utils";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const location = useLocation();
+  const isRoot = location.pathname === "/blogs" || location.pathname === "/";
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="h-screen flex flex-col ">
+      <main className="h-full flex">
+        <aside
+          className={cn(
+            "w-full lg:max-w-90 shrink-0 overflow-auto p-2 lg:block",
+            isRoot ? "block" : "hidden",
+          )}
+        >
+          <ErrorBoundary name="BlogList">
+            <BlogItemList />
+          </ErrorBoundary>
+        </aside>
+        <section
+          className={cn(
+            "lg:block grow overflow-auto",
+            isRoot ? "hidden" : "block",
+          )}
+        >
+          <ErrorBoundary name="BlogView">
+            <Outlet />
+          </ErrorBoundary>
+        </section>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
