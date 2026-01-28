@@ -1,6 +1,7 @@
 import { Calendar } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import type { Blog } from "@/types/blog";
+import { formatDate } from "@/utils/dateHelpers";
 
 interface BigBlogCardProps {
   blog: Blog;
@@ -8,15 +9,6 @@ interface BigBlogCardProps {
 }
 
 export default function BigBlogCard({ blog, onClick }: BigBlogCardProps) {
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   return (
     <Card 
       className="overflow-hidden cursor-pointer pt-0 rounded-lg bg-white gap-3 shadow-sm hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white via-white to-gray-50/30 relative"
@@ -30,7 +22,7 @@ export default function BigBlogCard({ blog, onClick }: BigBlogCardProps) {
         />
       </div>
       <CardHeader className="pt-3">
-         <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {blog.category.map((cat, index) => (
             <span
               key={cat}
@@ -45,7 +37,7 @@ export default function BigBlogCard({ blog, onClick }: BigBlogCardProps) {
         </div>
         <CardTitle className="text-xl line-clamp-2">{blog.title}</CardTitle>
         <CardDescription className="text-[12px] font-medium text-gray-500 flex gap-1 items-center">
-          <Calendar height={14} /> <p>{formatDate(blog.date)} </p> 
+          <Calendar height={14} /> <p>{formatDate(blog.date, "long")} </p> 
         </CardDescription>
       </CardHeader>
       <CardContent>

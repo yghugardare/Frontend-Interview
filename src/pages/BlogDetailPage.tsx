@@ -1,38 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams, useNavigate } from "react-router-dom";
 import { Calendar } from "lucide-react";
-import SmallBlogCard from "../components/SmallBlogCard";
-import SmallBlogCardSkeleton from "../components/SmallBlogCardSkeleton";
+import SmallBlogCard from "../components/blog/SmallBlogCard";
+import SmallBlogCardSkeleton from "../components/skeletons/SmallBlogCardSkeleton";
 import { Skeleton } from "../components/ui/skeleton";
-import type { Blog } from "../types/blog";
-
-async function fetchBlogs(): Promise<Blog[]> {
-       // artificial delay
-    await new Promise((resolve)=>{
-        setTimeout(() => {
-            resolve(true);
-        }, 1000);
-    })
-  const response = await fetch("http://localhost:3001/blogs");
-  if (!response.ok) {
-    throw new Error("Failed to fetch blogs");
-  }
-  return response.json();
-}
-
-async function fetchBlogById(id: string): Promise<Blog> {
-    // artificial delay
-    await new Promise((resolve)=>{
-        setTimeout(() => {
-            resolve(true);
-        }, 1000);
-    })
-  const response = await fetch(`http://localhost:3001/blogs/${id}`);
-  if (!response.ok) {
-    throw new Error("Failed to fetch blog");
-  }
-  return response.json();
-}
+import { fetchBlogs, fetchBlogById } from "../api/blogs";
+import { formatDate, getReadingTime } from "../utils/dateHelpers";
 
 export default function BlogDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -55,19 +28,6 @@ export default function BlogDetailPage() {
     enabled: !!id,
   });
 
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
-  const getReadingTime = (content: string): number => {
-    const words = content.split(/\s+/).length;
-    return Math.ceil(words / 200);
-  };
-
   const handleBlogClick = (blogId: string) => {
     navigate(`/blog/${blogId}`);
   };
@@ -76,7 +36,6 @@ export default function BlogDetailPage() {
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Side */}
           <div className="lg:col-span-1 h-screen lg:h-[calc(100vh-120px)] sticky top-20 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-gray-400">
             <h3 className="text-lg font-bold text-gray-900 mb-4">All Blogs</h3>
             <div className="space-y-3 pr-2">
@@ -151,8 +110,7 @@ export default function BlogDetailPage() {
           )}
 
           {blog && (
-            <article className="bg-white rounded-lg  space-y-6 overflow-hidden">
-              {/* Cover Image */}
+            <article className="bg-white rounded-lg space-y-6 overflow-hidden">
               <div className="w-full aspect-video overflow-hidden bg-gray-100">
                 <img
                   src={blog.coverImage}
@@ -161,10 +119,8 @@ export default function BlogDetailPage() {
                 />
               </div>
             <div className="p-8 space-y-6">
-              {/* Title */}
               <h1 className="text-4xl font-bold text-gray-900">{blog.title}</h1>
 
-              {/* Category, Date, and Reading Time */}
               <div className="flex flex-wrap items-center gap-4 text-sm">
                 <div className="flex flex-wrap items-center gap-2">
                   {blog.category.map((cat, index) => (

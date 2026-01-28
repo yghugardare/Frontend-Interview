@@ -1,22 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import BigBlogCard from "../components/BigBlogCard";
-import BigBlogCardSkeleton from "../components/BigBlogCardSkeleton";
-import type { Blog } from "../types/blog";
-
-async function fetchBlogs(): Promise<Blog[]> {
-  // artificial delay for ux
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true);
-    }, 1000);
-  });
-  const response = await fetch("http://localhost:3001/blogs");
-  if (!response.ok) {
-    throw new Error("Failed to fetch blogs");
-  }
-  return response.json();
-}
+import BigBlogCard from "../components/blog/BigBlogCard";
+import BigBlogCardSkeleton from "../components/skeletons/BigBlogCardSkeleton";
+import { fetchBlogs } from "../api/blogs";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -31,7 +17,6 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-gray-100">
-      {/* Header Section */}
       <div className="py-16 bg-linear-to-b from-gray-50 to-gray-100">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">CA Monk Blog</h1>
@@ -39,7 +24,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Blog List Section */}
       <div className="container mx-auto px-4 py-12">
 
       {isLoading && (

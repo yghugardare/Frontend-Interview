@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import CreateBlogForm from "../components/CreateBlogForm";
+import CreateBlogForm from "../components/blog/CreateBlogForm";
 
 export default function CreateBlogPage() {
   const navigate = useNavigate();
@@ -9,7 +9,6 @@ export default function CreateBlogPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-2xl mx-auto">
-        {/* Header */}
         <div className="mb-8">
           <Button
             variant="ghost"
@@ -24,7 +23,6 @@ export default function CreateBlogPage() {
           </p>
         </div>
 
-        {/* Form Card */}
         <Card>
           <CardHeader>
             <CardTitle>Blog Details</CardTitle>

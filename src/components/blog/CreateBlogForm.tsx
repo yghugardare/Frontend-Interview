@@ -3,9 +3,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 import {
   Form,
   FormControl,
@@ -13,7 +13,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
+} from "../ui/form";
+import { createBlog } from "../../api/blogs";
 
 const blogSchema = z.object({
   title: z.string().min(5, "Title must be at least 5 characters").max(200, "Title must be less than 200 characters"),
@@ -27,26 +28,6 @@ type BlogFormValues = z.infer<typeof blogSchema>;
 
 interface CreateBlogFormProps {
   onSuccess?: () => void;
-}
-
-async function createBlog(data: BlogFormValues) {
-  const response = await fetch("http://localhost:3001/blogs", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      ...data,
-      category: data.category.split(",").map((c) => c.trim()),
-      date: new Date().toISOString(),
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error("Failed to create blog");
-  }
-
-  return response.json();
 }
 
 export default function CreateBlogForm({ onSuccess }: CreateBlogFormProps) {
