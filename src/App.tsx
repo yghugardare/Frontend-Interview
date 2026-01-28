@@ -1,9 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import Navbar from "./components/Navbar";
 import BigBlogCard from "./components/BigBlogCard";
+import BigBlogCardSkeleton from "./components/BigBlogCardSkeleton";
 import type { Blog } from "./types/blog";
 
 async function fetchBlogs(): Promise<Blog[]> {
+  // artificial delay for ux
+  await new Promise((resolve)=>{
+    setTimeout(() => {
+      resolve(true);
+    }, 1000);
+  })
   const response = await fetch("http://localhost:3001/blogs");
   if (!response.ok) {
     throw new Error("Failed to fetch blogs");
@@ -28,12 +35,15 @@ function App() {
         </div>
 
         {isLoading && (
-          <div className="flex items-center justify-center py-20">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading blogs...</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Array.from({ length: 6 }).map((_, index) => (
+              <BigBlogCardSkeleton key={index} />
+            ))}
           </div>
+        )}
+
+        {isLoading && (
+          <p className="text-gray-600">Loading blogs...</p>
         )}
 
         {isError && (
