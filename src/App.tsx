@@ -1,11 +1,64 @@
-import { Button } from "@/components/ui/button"
+import { useQuery } from "@tanstack/react-query";
+import Navbar from "./components/Navbar";
+import BigBlogCard from "./components/BigBlogCard";
+import type { Blog } from "./types/blog";
+
+async function fetchBlogs(): Promise<Blog[]> {
+  const response = await fetch("http://localhost:3001/blogs");
+  if (!response.ok) {
+    throw new Error("Failed to fetch blogs");
+  }
+  return response.json();
+}
 
 function App() {
+  const { data: blogs, isLoading, isError, error } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: fetchBlogs,
+  });
+
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      
+      <main className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">All Blogs</h2>
+          <p className="text-gray-600">Explore our latest articles and insights</p>
+        </div>
+
+        {isLoading && (
+          <div className="flex items-center justify-center py-20">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading blogs...</p>
+            </div>
+          </div>
+        )}
+
+        {isError && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+            <p className="text-red-800 font-medium">Error loading blogs</p>
+            <p className="text-red-600 text-sm mt-2">{error.message}</p>
+          </div>
+        )}
+
+        {blogs && blogs.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogs.map((blog) => (
+              <BigBlogCard key={blog.id} blog={blog} />
+            ))}
+          </div>
+        )}
+
+        {blogs && blogs.length === 0 && (
+          <div className="text-center py-20">
+            <p className="text-gray-600">No blogs found</p>
+          </div>
+        )}
+      </main>
     </div>
-  )
+  );
 }
 
 export default App
