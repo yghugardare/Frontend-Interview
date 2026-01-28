@@ -20,7 +20,7 @@ export default function Navbar() {
           <Button variant="ghost" onClick={() => navigate("/")}>
             All Blogs
           </Button>
-          <Button>Create Blog</Button>
+          <Button onClick={() => navigate("/create")}>Create Blog</Button>
         </div>
       </div>
     </nav>
