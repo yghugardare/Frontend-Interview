@@ -3,10 +3,7 @@
     {
       "id": "1",
       "title": "Future of Fintech",
-      "category": [
-        "FINANCE",
-        "TECH"
-      ],
+      "category": ["FINANCE", "TECH"],
       "description": "Exploring how AI and blockchain are reshaping financial services and what it means for the accounting profession",
       "date": "2026-01-11T09:12:45.120Z",
       "coverImage": "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg",
@@ -15,10 +12,7 @@
     {
       "id": "2",
       "title": "Ace Your CA Finals",
-      "category": [
-        "CAREER",
-        "EDUCATION"
-      ],
+      "category": ["CAREER", "EDUCATION"],
       "description": "Strategies and study plans to help you clear your exams in the first attempt without burning out",
       "date": "2026-01-13T06:42:36.580Z",
       "coverImage": "https://images.pexels.com/photos/5212327/pexels-photo-5212327.jpeg",
@@ -27,10 +21,7 @@
     {
       "id": "3",
       "title": "Understanding Tax Reforms",
-      "category": [
-        "REGULATIONS",
-        "FINANCE"
-      ],
+      "category": ["REGULATIONS", "FINANCE"],
       "description": "A comprehensive breakdown of the new tax laws introduced this fiscal year and their implications",
       "date": "2026-01-05T10:20:15.000Z",
       "coverImage": "https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg",
@@ -39,9 +30,7 @@
     {
       "id": "4",
       "title": "Building a Career in Accounting",
-      "category": [
-        "CAREER"
-      ],
+      "category": ["CAREER"],
       "description": "Key skills and mindset required to succeed in modern accounting roles",
       "date": "2025-12-28T14:10:00.000Z",
       "coverImage": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg",
@@ -50,10 +39,7 @@
     {
       "id": "5",
       "title": "AI in Auditing",
-      "category": [
-        "TECH",
-        "FINANCE"
-      ],
+      "category": ["TECH", "FINANCE"],
       "description": "How artificial intelligence is improving audit accuracy and efficiency",
       "date": "2026-01-02T08:30:00.000Z",
       "coverImage": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
@@ -62,10 +48,7 @@
     {
       "id": "6",
       "title": "Managing Work-Life Balance",
-      "category": [
-        "CAREER",
-        "LIFESTYLE"
-      ],
+      "category": ["CAREER", "LIFESTYLE"],
       "description": "Practical tips for professionals handling high-pressure roles",
       "date": "2026-01-09T18:45:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3768894/pexels-photo-3768894.jpeg",
@@ -74,9 +57,7 @@
     {
       "id": "7",
       "title": "GST Compliance Simplified",
-      "category": [
-        "REGULATIONS"
-      ],
+      "category": ["REGULATIONS"],
       "description": "Understanding GST returns and compliance without confusion",
       "date": "2025-12-20T11:00:00.000Z",
       "coverImage": "https://images.pexels.com/photos/4386326/pexels-photo-4386326.jpeg",
@@ -85,10 +66,7 @@
     {
       "id": "8",
       "title": "Personal Finance for Young Professionals",
-      "category": [
-        "FINANCE",
-        "LIFESTYLE"
-      ],
+      "category": ["FINANCE", "LIFESTYLE"],
       "description": "Smart money habits to build long-term wealth",
       "date": "2026-01-07T07:15:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3943724/pexels-photo-3943724.jpeg",
@@ -97,10 +75,7 @@
     {
       "id": "9",
       "title": "Digital Transformation in Accounting Firms",
-      "category": [
-        "TECH",
-        "CAREER"
-      ],
+      "category": ["TECH", "CAREER"],
       "description": "How firms are adapting to cloud-based accounting",
       "date": "2025-12-15T09:00:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
@@ -109,10 +84,7 @@
     {
       "id": "10",
       "title": "Ethics in Modern Finance",
-      "category": [
-        "FINANCE",
-        "REGULATIONS"
-      ],
+      "category": ["FINANCE", "REGULATIONS"],
       "description": "Why ethics matter more than ever in financial decision-making",
       "date": "2025-12-10T16:30:00.000Z",
       "coverImage": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
