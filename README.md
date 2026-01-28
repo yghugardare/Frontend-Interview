@@ -5,6 +5,7 @@ Welcome to the CA Monk Blog Application assignment! This project tests your abil
 ## Installation
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - Git
 - React.js knowledge
@@ -21,15 +22,18 @@ Welcome to the CA Monk Blog Application assignment! This project tests your abil
      ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
-3. **Install required libraries for the assignment** , ie, TanStack Query, Tailwind CSS, and  shadcn/ui
+3. **Install required libraries for the assignment** , ie, TanStack Query, Tailwind CSS, and shadcn/ui
 4. **Start the JSON Server (Backend API)**
+
    ```bash
    npm run server
    ```
+
    The API will run on `http://localhost:3001`
 
 5. **Start the Development Server (in a new terminal)**
@@ -43,6 +47,7 @@ Welcome to the CA Monk Blog Application assignment! This project tests your abil
 You are required to build a blog application with the following features:
 
 ### Required Technologies
+
 - ✅ **TanStack Query** - For server state management and data fetching
   - 📚 [Documentation](https://tanstack.com/query/latest)
 - ✅ **Tailwind CSS** - For styling
@@ -61,22 +66,25 @@ Here's a reference design for the blog application layout:
 
 UI IMAGE - ![UI-refernece](ui.jpeg)
 
-> **Note:** This is just a reference design. Your implementation does not have to look exactly like this. 
+> **Note:** This is just a reference design. Your implementation does not have to look exactly like this.
 
 For the blog content, use plain text — no need to use HTML-formatted text.
 
 ### Tasks to Complete
 
 #### 1. **Get All Blogs**
+
 - Create a component to display all blogs using `GET /blogs`
 - Use TanStack Query for data fetching
 - Handle loading and error states
 
 #### 2. **Get Blog by ID**
+
 - Implement single blog view using `GET /blogs/:id`
 - Use TanStack Query for data fetching
 
 #### 3. **Create a New Blog**
+
 - Build a form to create a new blog using `POST /blogs`
 - Invalidate queries after successful creation
 
@@ -86,15 +94,16 @@ For the blog content, use plain text — no need to use HTML-formatted text.
 
 The JSON Server provides the following endpoints:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/blogs` | Get all blogs |
-| GET | `/blogs/:id` | Get a specific blog by ID |
-| POST | `/blogs` | Create a new blog |
+| Method | Endpoint     | Description               |
+| ------ | ------------ | ------------------------- |
+| GET    | `/blogs`     | Get all blogs             |
+| GET    | `/blogs/:id` | Get a specific blog by ID |
+| POST   | `/blogs`     | Create a new blog         |
 
 ### Evaluation Criteria
 
 Your submission will be evaluated on:
+
 - ✅ Correct implementation of TanStack Query hooks
 - ✅ Proper use of Tailwind CSS for styling
 - ✅ Integration of shadcn/ui components
@@ -102,8 +111,6 @@ Your submission will be evaluated on:
 - ✅ Error handling and loading states
 - ✅ Responsive design []
 - ✅ User experience and UI polish
-
-
 
 ## Sample Blog Object
 
@@ -134,6 +141,7 @@ content: The full content of the blog
 ## Submission
 
 Once you've completed the assignment:
+
 1. Ensure all tasks are working correctly
 2. Commit your changes with clear commit messages
 3. Push your changes to your **forked** repository
@@ -155,9 +163,10 @@ Use **Tailwind CSS** and **shadcn/ui** for styling. You are expected to install,
 
 **What are the main things you will evaluate?**  
 We will mainly look at:
-- Correct use of the required technologies (TypeScript, TanStack Query, Tailwind CSS, shadcn/ui)  
-- Code quality and structure  
-- UI/UX, including responsiveness and overall experience  
+
+- Correct use of the required technologies (TypeScript, TanStack Query, Tailwind CSS, shadcn/ui)
+- Code quality and structure
+- UI/UX, including responsiveness and overall experience
 
 **What happens after I submit the assignment?**  
 If you are shortlisted, you will receive an email about the next round. The next round will be a task-based session focused on your coding skills and React knowledge.
