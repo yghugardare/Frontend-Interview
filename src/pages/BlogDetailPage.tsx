@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams, useNavigate } from "react-router-dom";
+import { Calendar } from "lucide-react";
 import SmallBlogCard from "../components/SmallBlogCard";
 import SmallBlogCardSkeleton from "../components/SmallBlogCardSkeleton";
 import { Skeleton } from "../components/ui/skeleton";
@@ -36,6 +37,7 @@ async function fetchBlogById(id: string): Promise<Blog> {
 export default function BlogDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const primaryColor = "rgb(80, 71, 228)";
 
   const { data: blogs, isLoading: blogsLoading } = useQuery({
     queryKey: ["blogs"],
@@ -61,39 +63,53 @@ export default function BlogDetailPage() {
     });
   };
 
+  const getReadingTime = (content: string): number => {
+    const words = content.split(/\s+/).length;
+    return Math.ceil(words / 200);
+  };
+
   const handleBlogClick = (blogId: string) => {
     navigate(`/blog/${blogId}`);
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Panel - Blog List */}
-        <div className="lg:col-span-1 h-screen lg:h-[calc(100vh-120px)] sticky top-20 overflow-y-auto">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">All Blogs</h3>
-          <div className="space-y-4 pr-2">
-            {blogsLoading &&
-              Array.from({ length: 4 }).map((_, index) => (
-                <SmallBlogCardSkeleton key={index} />
-              ))}
+    <div className="min-h-screen bg-gray-100">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Side */}
+          <div className="lg:col-span-1 h-screen lg:h-[calc(100vh-120px)] sticky top-20 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-gray-400">
+            <h3 className="text-lg font-bold text-gray-900 mb-4">All Blogs</h3>
+            <div className="space-y-3 pr-2">
+              {blogsLoading &&
+                Array.from({ length: 4 }).map((_, index) => (
+                  <SmallBlogCardSkeleton key={index} />
+                ))}
 
-            {blogs &&
-              blogs.map((blogItem) => (
-                <SmallBlogCard
-                  key={blogItem.id}
-                  blog={blogItem}
-                  onClick={() => handleBlogClick(blogItem.id)}
-                />
-              ))}
+              {blogs &&
+                blogs.map((blogItem) => (
+                  <div
+                    key={blogItem.id}
+                    onClick={() => handleBlogClick(blogItem.id)}
+                    style={{
+                      borderLeft: blogItem.id === id ? `4px solid ${primaryColor}` : "4px solid #f3f4f6",
+                    }}
+                    className="bg-white rounded-lg transition-all"
+                  >
+                    <SmallBlogCard
+                      blog={blogItem}
+                      onClick={() => handleBlogClick(blogItem.id)}
+                    />
+                  </div>
+                ))}
+            </div>
           </div>
-        </div>
 
-        {/* Right Panel - Blog Detail */}
-        <div className="lg:col-span-2">
-          {blogLoading && (
-            <div className="space-y-6">
-              {/* Cover Image Skeleton */}
-              <Skeleton className="w-full aspect-video rounded-lg" />
+          {/* Right Panel - Blog Detail */}
+          <div className="lg:col-span-2">
+            {blogLoading && (
+              <div className="space-y-6 bg-white rounded-lg p-8">
+                {/* Cover Image Skeleton */}
+                <Skeleton className="w-full aspect-video rounded-lg" />
 
               {/* Title Skeleton */}
               <div className="space-y-2">
@@ -135,32 +151,44 @@ export default function BlogDetailPage() {
           )}
 
           {blog && (
-            <article className="space-y-6">
+            <article className="bg-white rounded-lg  space-y-6 overflow-hidden">
               {/* Cover Image */}
-              <div className="w-full aspect-video overflow-hidden rounded-lg bg-gray-100">
+              <div className="w-full aspect-video overflow-hidden bg-gray-100">
                 <img
                   src={blog.coverImage}
                   alt={blog.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-
+            <div className="p-8 space-y-6">
               {/* Title */}
               <h1 className="text-4xl font-bold text-gray-900">{blog.title}</h1>
 
-              {/* Category and Date */}
-              <div className="flex flex-wrap items-center gap-3">
-                {blog.category.map((cat) => (
-                  <span
-                    key={cat}
-                    className="inline-flex items-center rounded-full bg-blue-100 px-4 py-1.5 text-sm font-medium text-blue-800"
-                  >
-                    {cat}
-                  </span>
-                ))}
-                <span className="text-gray-500">|</span>
-                <span className="text-sm text-gray-600">
+              {/* Category, Date, and Reading Time */}
+              <div className="flex flex-wrap items-center gap-4 text-sm">
+                <div className="flex flex-wrap items-center gap-2">
+                  {blog.category.map((cat, index) => (
+                    <span
+                      key={cat}
+                      className="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide bg-gradient-to-r from-brand/10 to-brand/20 text-brand border border-brand/20 transition-all duration-300 hover:shadow-md hover:scale-105"
+                      style={{
+                        animationDelay: `${index * 50}ms`
+                      }}
+                    >
+                      {cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase()}
+                    </span>
+                  ))}
+                </div>
+                <span className="text-gray-400">|</span>
+                <span className="text-gray-400 flex items-center gap-1">
+                  <Calendar height={14} />
+                </span>
+                <span className="text-gray-600">
                   {formatDate(blog.date)}
+                </span>
+                <span className="text-gray-400">|</span>
+                <span className="text-gray-600">
+                  {getReadingTime(blog.content)} min read
                 </span>
               </div>
 
@@ -183,10 +211,15 @@ export default function BlogDetailPage() {
                     Tags
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {blog.category.map((tag) => (
+                    {blog.category.map((tag, index) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center rounded-md bg-gray-100 px-3 py-1 text-sm text-gray-700 hover:bg-gray-200 transition-colors"
+                        className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 hover:border-gray-300"
+                        style={{
+                          animationDelay: `${index * 60}ms`,
+                          backgroundColor: primaryColor + "15",
+                          color: primaryColor
+                        }}
                       >
                         #{tag.toLowerCase()}
                       </span>
@@ -194,10 +227,13 @@ export default function BlogDetailPage() {
                   </div>
                 </div>
               )}
+
+            </div>
             </article>
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

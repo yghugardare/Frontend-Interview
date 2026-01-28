@@ -30,11 +30,17 @@ export default function HomePage() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">All Blogs</h2>
-        <p className="text-gray-600">Explore our latest articles and insights</p>
+    <main className="min-h-screen bg-gray-100">
+      {/* Header Section */}
+      <div className="py-16 bg-linear-to-b from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">CA Monk Blog</h1>
+          <p className="text-gray-600 text-lg">Explore our latest articles and insights</p>
+        </div>
       </div>
+
+      {/* Blog List Section */}
+      <div className="container mx-auto px-4 py-12">
 
       {isLoading && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -52,7 +58,7 @@ export default function HomePage() {
       )}
 
       {blogs && blogs.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {blogs.map((blog) => (
             <BigBlogCard 
               key={blog.id} 
@@ -62,12 +68,7 @@ export default function HomePage() {
           ))}
         </div>
       )}
-
-      {blogs && blogs.length === 0 && (
-        <div className="text-center py-20">
-          <p className="text-gray-600">No blogs found</p>
-        </div>
-      )}
+      </div>
     </main>
   );
 }

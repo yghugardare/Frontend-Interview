@@ -1,3 +1,4 @@
+import { Calendar } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import type { Blog } from "@/types/blog";
 
@@ -7,6 +8,7 @@ interface BigBlogCardProps {
 }
 
 export default function BigBlogCard({ blog, onClick }: BigBlogCardProps) {
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -17,7 +19,7 @@ export default function BigBlogCard({ blog, onClick }: BigBlogCardProps) {
 
   return (
     <Card 
-      className="overflow-hidden cursor-pointer transition-all hover:shadow-xl"
+      className="overflow-hidden cursor-pointer pt-0 rounded-lg bg-white gap-3 shadow-sm hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white via-white to-gray-50/30 relative"
       onClick={onClick}
     >
       <div className="aspect-video w-full overflow-hidden bg-gray-100">
@@ -27,24 +29,27 @@ export default function BigBlogCard({ blog, onClick }: BigBlogCardProps) {
           className="h-full w-full object-cover transition-transform hover:scale-105"
         />
       </div>
-      <CardHeader>
-        <div className="flex flex-wrap gap-2 mb-3">
-          {blog.category.map((cat) => (
+      <CardHeader className="pt-3">
+         <div className="flex flex-wrap gap-2">
+          {blog.category.map((cat, index) => (
             <span
               key={cat}
-              className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800"
+              className="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold tracking-wide bg-gradient-to-r from-brand/10 to-brand/20 text-brand border border-brand/20 transition-all duration-300 hover:shadow-md hover:scale-105"
+              style={{
+                animationDelay: `${index * 50}ms`
+              }}
             >
-              {cat}
+              {cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase()}
             </span>
           ))}
         </div>
-        <CardTitle className="text-2xl">{blog.title}</CardTitle>
-        <CardDescription className="text-sm">
-          {formatDate(blog.date)}
+        <CardTitle className="text-xl line-clamp-2">{blog.title}</CardTitle>
+        <CardDescription className="text-[12px] font-medium text-gray-500 flex gap-1 items-center">
+          <Calendar height={14} /> <p>{formatDate(blog.date)} </p> 
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-base text-gray-700 line-clamp-3">{blog.description}</p>
+        <p className="text-sm text-gray-700 line-clamp-2">{blog.description}</p>
       </CardContent>
     </Card>
   );
