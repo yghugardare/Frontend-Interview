@@ -16,11 +16,11 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
-      <div className="py-16 bg-linear-to-b from-gray-50 to-gray-100">
+    <main className="min-h-screen bg-background">
+      <div className="py-16 bg-gradient-to-b from-brand/5 to-brand/10">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">CA Monk Blog</h1>
-          <p className="text-gray-600 text-lg">Explore our latest articles and insights</p>
+          <h1 className="text-5xl font-bold text-brand mb-4">CA Monk Blog</h1>
+          <p className="text-foreground/70 text-lg">Explore our latest articles and insights</p>
         </div>
       </div>
 

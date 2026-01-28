@@ -17,8 +17,8 @@ export default function CreateBlogPage() {
           >
             ← Back to Blogs
           </Button>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Create New Blog</h1>
-          <p className="text-gray-600">
+          <h1 className="text-4xl font-bold text-brand mb-2">Create New Blog</h1>
+          <p className="text-foreground/70">
             Share your thoughts and insights with our community
           </p>
         </div>
